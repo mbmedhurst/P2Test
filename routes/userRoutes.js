@@ -1,4 +1,4 @@
-const db = require('../models')
+const {User} = require('../models')
 
 module.exports = app => {
 
@@ -10,13 +10,27 @@ module.exports = app => {
         })
     })
 
+    //GET one user
+    app.get('/users/:id', (req, res) => {
+
+    })
+
 
     // POST a user
     app.post('/users', (req, res) => {
-        db.query('INSERT INTO users SET ?', req.body, (e) => {
-            if (e) throw e
-            res.sendStatus(200)
-        })
+        User.create(req.body)
+        .then(_ => res.sendStatus(200))
+        .catch(e => console.log(e))
+    })
+
+    //PUT a user
+    app.put('users/:id', (req, res) => {
+
+    })
+
+    //DELETE a user
+    app.delete('users/:id', (req, res) => {
+
     })
 
 }

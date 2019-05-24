@@ -1,36 +1,38 @@
+// axios requests for user (client side)
+
 import axios from 'axios'
 
 const User = {
     getAll() {
-        axios.get('/user')
+        axios.get('/users')
         .then(user => {
 
         })
         .catch(e => console.log(e))
     },
     getOne(id) {
-        axios.get(`user/${id}`)
+        axios.get(`users/${id}`)
         .then(user => {
 
         })
         .catch(e => console.log(e))
     },
     postOne(user) {
-        axios.post(`user`, user)
+        axios.post(`users`, user)
         .then(_ => {
 
         })
         .catch(e => console.log(e))
     },
     putOne(id, user) {
-        axios.put(`/user/${id}`, user)
+        axios.put(`/users/${id}`, user)
         .then(_ => {
 
         })
         .catch(e => console.log(e))
     },
     deleteOne(id) {
-        axios.delete(`/user/${id}`)
+        axios.delete(`/users/${id}`)
         .then(_ => {
 
         })

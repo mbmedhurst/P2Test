@@ -19,7 +19,7 @@ class Home extends Component {
     handleFormSubmit = event => {
         event.preventDefault()
         let user = this.state.user
-        user.push({
+        User.postOne({
             name: this.state.name,
             email: this.state.email,
             username: this.state.username,

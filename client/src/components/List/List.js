@@ -1,3 +1,5 @@
+// template for displaying list of users
+
 import React from 'react'
 
 const List = ({user}) =>

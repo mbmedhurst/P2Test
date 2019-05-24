@@ -1,3 +1,5 @@
+// form for inputting users
+
 import React from 'react'
 
 const Form = ({ handleFormSubmit, handleInputChange, name, email, username, password}) =>
