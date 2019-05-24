@@ -12,22 +12,30 @@ class Home extends Component {
         user: []
     }
 
+    componentWillMount () {
+        User.getAll()
+        .then(({data}) => {
+            this.setState({user: data})
+        })
+    }
+
     handleInputChange = event => {
         this.setState({ [event.target.id]: event.target.value })
     }
 
     handleFormSubmit = event => {
         event.preventDefault()
-        let user = this.state.user
-        User.postOne({
+        let user = {
             name: this.state.name,
             email: this.state.email,
             username: this.state.username,
             password: this.state.password
-        })
+        }
+        let users = this.state.user
+        User.postOne(user)
+        user.push(user)
         this.setState({ user })
     }
-
     render() {
         return (
             <>

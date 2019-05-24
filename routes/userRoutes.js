@@ -4,10 +4,9 @@ module.exports = app => {
 
     // GET all users
     app.get('/users', (req, res) => {
-        db.query('SELECT * FROM users', (e, users) => {
-            if (e) throw e
-            res.json(users)
-        })
+        User.findAll()
+        .then(user => res.json(user))
+        .catch(e => console.log(e))
     })
 
     //GET one user
