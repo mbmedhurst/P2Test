@@ -1,3 +1,9 @@
+// if you have to reclone:
+// - run dotenv
+// - create new .env file (copy from project 2)
+// - delete global package-lock.json folder
+// - reinstall npm install
+
 require('dotenv').config()
 const express = require('express')
 const { join } = require('path')
