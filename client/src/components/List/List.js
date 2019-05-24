@@ -1,8 +1,17 @@
 import React from 'react'
 
-const List = _ =>
+const List = ({user}) =>
 <ul>
-    <li>one</li>
+  {
+      user.map(({name, email, username, password}) => (
+          <li>
+              <p>{name}</p>
+              <p>{email}</p>
+              <p>{username}</p>
+              <p>{password}</p>
+          </li>
+      ))
+  }
 </ul>
 
 export default List

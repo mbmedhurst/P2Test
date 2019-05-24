@@ -5,7 +5,7 @@ import Home from './pages/Home'
 const App = _ =>
   <Router>
     <div>
-      <Route component={_ => <Home />} />
+      <Route exact path='/' component={_ => <Home />} />
     </div>
   </Router>
 
